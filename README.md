@@ -26,8 +26,8 @@ This repository contains **complete, reproducible code** for all experiments rep
 
 **Start here.** This notebook runs the complete Universal-VLA pipeline on ScreenSpot-v2 (1,272 samples) and ScreenSpot-Pro (1,581 samples).
 
-| Cell | What it does | Corresponds to |
-|------|-------------|----------------|
+| Cell | What it does |
+|------|-------------|
 | 1-4 | Setup, dependencies, download ScreenSpot-v2 | 
 | 5 | **Load dataset with FIXED bbox format** (`[x,y,w,h]` → `[x1,y1,x2,y2]`) Bug fix in rebuttal |
 | 6 | Load models: CLIP ViT-B/32, SBERT, EasyOCR (**170M params, zero UI training**) | 
