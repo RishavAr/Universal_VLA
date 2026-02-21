@@ -28,14 +28,14 @@ This repository contains **complete, reproducible code** for all experiments rep
 
 | Cell | What it does | Corresponds to |
 |------|-------------|----------------|
-| 1-4 | Setup, dependencies, download ScreenSpot-v2 | — |
-| 5 | **Load dataset with FIXED bbox format** (`[x,y,w,h]` → `[x1,y1,x2,y2]`) | Bug fix in rebuttal |
-| 6 | Load models: CLIP ViT-B/32, SBERT, EasyOCR (**170M params, zero UI training**) | Section 3 |
-| 8 | Multi-strategy proposal engine (contour + edge + MSER + OCR) | Section 3.2 |
-| 9 | Embedding functions — implements **Eq. 3** (vision) and **Eq. 4** (text) | Section 3.3 |
-| 10 | Z-score calibration — implements **Eq. 5** | Section 3.3 |
-| 11 | Universal-VLA inference — implements **Eq. 6** (max-fusion gate) | Section 3.3 |
-| 13 | **Full evaluation results**: Mobile 45.5%, Desktop 49.7%, Web 43.2%, Overall **45.8%** | Table 1 |
+| 1-4 | Setup, dependencies, download ScreenSpot-v2 | 
+| 5 | **Load dataset with FIXED bbox format** (`[x,y,w,h]` → `[x1,y1,x2,y2]`) Bug fix in rebuttal |
+| 6 | Load models: CLIP ViT-B/32, SBERT, EasyOCR (**170M params, zero UI training**) | 
+| 8 | Multi-strategy proposal engine (contour + edge + MSER + OCR) | 
+| 9 | Embedding functions — implements **Eq. 3** (vision) and **Eq. 4** (text) | 
+| 10 | Z-score calibration — implements **Eq. 5** | 
+| 11 | Universal-VLA inference — implements **Eq. 6** (max-fusion gate) |
+| 13 | **Full evaluation results**: Mobile 45.5%, Desktop 49.7%, Web 43.2%, Overall **45.8%** | 
 | 15 | **Ablation: Fusion strategies** — vision-only, text-only, mean, max |  
 | 16 | **Ablation: k-NN sensitivity** (k=3,5,7) — stable at 45.8-46.1%  |
 | 18 | **Ablation: α sensitivity** (0.0, 0.15, 0.30) — stable at 45.7-45.9% | 
@@ -73,34 +73,6 @@ This notebook proves that Universal-VLA (Eq. 3-6) captures **fundamentally diffe
 - Universal-VLA: strong on text (66-72%), weak on icons (12-18%)
 - OS-Atlas: strong on both, but UVLA rescues ~4% on text elements
 - Different failure modes = complementary paradigms
-
----
-
-### 🖼️ `verifier_experiment.png` — Results Visualization
-
-Three-panel figure showing:
-- **Left:** Bar chart comparing OS-Atlas (83.9%), hybrid (84.0%), UVLA (45.8%), and Oracle (87.3%)
-- **Center:** Pie chart of complementarity matrix (44 UVLA-only rescues)
-- **Right:** Threshold sensitivity curve showing hybrid accuracy vs. confidence threshold
-
----
-
-## How to Reproduce
-
-### Quick Test (~15 min)
-1. Open `Universal_VLA_Rebuttal_part-1.ipynb` in Google Colab
-2. Set `MAX_EVAL = 50` in Cell 1
-3. Paste your HuggingFace token in Cell 1
-4. Select **A100 GPU** runtime
-5. Run All
-
-### Full Evaluation (~60 min)
-Same as above but set `MAX_EVAL = None`
-
-### Complementarity Experiment (~3 hours)
-1. Open `Universal_VLA_VS_OSATLAS.ipynb`
-2. Paste your HuggingFace token
-3. Run All (loads both UVLA and OS-Atlas-7B, ~17GB GPU)
 
 ---
 
