@@ -3,7 +3,7 @@
 
 # Universal-VLA: Training-Free UI Grounding via Closed-Form Similarity Scoring
 
-## ACL 2026 Rebuttal — Submission 10174
+## ACL  Rebuttal 
 
 This repository contains **complete, reproducible code** for all experiments reported in our rebuttal. All results can be verified by running the notebooks on a single A100 GPU.
 
@@ -15,7 +15,7 @@ This repository contains **complete, reproducible code** for all experiments rep
 ├── README.md                              ← You are here
 ├── Universal_VLA_Rebuttal_part-1.ipynb    ← Main evaluation (start here)
 ├── Universal_VLA_VS_OSATLAS.ipynb         ← Complementarity experiment
-└── verifier_experiment.png                ← Results visualization
+
 ```
 
 ---
